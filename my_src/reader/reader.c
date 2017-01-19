@@ -53,6 +53,8 @@ int		main_read(char *name, t_map *map)
 
   if ((buff = my_read(name)) == NULL)
     return (-1);
+  if (buff[my_strlen(buff) - 1] != '\n')
+    return (-1);
   if (verif_buff(buff) == -1)
     return (failed_we("wolf3d:\tthis map can't be read\n", -1));
   if (my_tab_maker(buff, map) == -1)
