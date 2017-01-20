@@ -5,7 +5,7 @@
 ## Login   <louis.mallez@epitech.net>
 ##
 ## Started on  Tue Oct 18 15:34:14 2016 mallez louis
-## Last update Tue Jan 17 19:18:39 2017 
+## Last update Fri Jan 20 11:16:02 2017 
 ##
 
 SRC	=	my_src/main.c	\
@@ -31,7 +31,8 @@ SRC	=	my_src/main.c	\
 		my_src/reader/texture.c		\
 		my_src/victory/have_win.c	\
 		my_src/victory/you_win.c	\
-		my_src/reader/color.c
+		my_src/reader/color.c	\
+		my_src/env.c
 
 OBJ	=	$(SRC:.c=.o)
 

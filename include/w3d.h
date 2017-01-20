@@ -5,11 +5,11 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Wed Dec 28 17:36:36 2016 mallez louis
-** Last update Sun Jan 15 20:49:28 2017 
+** Last update Fri Jan 20 11:08:07 2017 
 */
 
-#ifndef CR3D_H_
-#define CR3D_H_
+#ifndef W3D_H_
+#define W3D_H_
 
 #include "my_printf.h"
 #include "my.h"
@@ -203,5 +203,6 @@ int			have_win(t_my_framebuffer *, t_map *);
 int			you_win(t_my_framebuffer *, t_map *);
 int			bordure(t_map *, sfVector2i);
 int			verif_buff(char *);
+int			check_env(char **);
 
-#endif /* CR3D_H_ */
+#endif /* W3D_H_ */
