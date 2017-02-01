@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Mon Jan  2 09:55:55 2017 mallez louis
-** Last update Sun Jan 15 20:43:07 2017 
+** Last update Wed Feb  1 16:19:16 2017 
 */
 
 #include "w3d.h"
@@ -79,18 +79,22 @@ t_raycaster		my_raycast(sfVector2f pos, float direction,
 				   t_bloc **map, sfVector2i mapSize)
 {
   t_raycaster		ray;
+  float			coss;
+  float			sins;
 
   ray.size = 0;
   ray.pos.x = pos.x;
   ray.pos.y = pos.y;
+  coss = cosf(direction);
+  sins = sinf(direction);
   while (((int)ray.pos.y < mapSize.y - 1 && (int)ray.pos.y > 0
 	  && (int)ray.pos.x < mapSize.x - 1 && (int)ray.pos.x > 0)
 	 && (map[(int)ray.pos.y][(int)ray.pos.x].type == 0)
 	 && ray.size < R_DIST)
     {
       ray.size = ray.size + PRECISION;
-      ray.pos.x = pos.x + ray.size * cosf(direction);
-      ray.pos.y = pos.y + ray.size * sinf(direction);
+      ray.pos.x = pos.x + ray.size * coss;
+      ray.pos.y = pos.y + ray.size * sins;
     }
   ray.wall = map[(int)ray.pos.y][(int)ray.pos.x];
   if (ray.wall.type == 0)
