@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Wed Dec 28 17:39:23 2016 mallez louis
-** Last update Fri Jan 20 11:04:21 2017 
+** Last update Fri Feb  3 20:08:45 2017 
 */
 
 #include "w3d.h"
@@ -22,9 +22,9 @@ int			main(int ac, char **av, char **ae)
   t_map			map;
 
   if (ac != 2)
-    return (failed_we("wolf3d:\tInvalide Argument\n", 1));
+    return (failed_we("CR3D:\tInvalide Argument\n", 1));
   if (check_env(ae) == -1)
-    return(failed_we("wolf3d:\tInvalide Env\n", 1));
+    return(failed_we("CR3D:\tInvalide Env\n", 1));
   if (main_read(av[1], &map) == -1)
     return (1);
   if (texture_reader(&map) == -1)
