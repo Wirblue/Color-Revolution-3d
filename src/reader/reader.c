@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Tue Jan  3 11:15:26 2017 mallez louis
-** Last update Fri Feb  3 20:07:59 2017 
+** Last update Tue May  9 10:06:04 2017 
 */
 
 #include "w3d.h"
@@ -51,6 +51,11 @@ int		main_read(char *name, t_map *map)
 {
   char		*buff;
 
+  if (name == NULL)
+    {
+      map_gen(map);
+      return (0);
+    }
   if ((buff = my_read(name)) == NULL)
     return (-1);
   if (buff[my_strlen(buff) - 1] != '\n')
