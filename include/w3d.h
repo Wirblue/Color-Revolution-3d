@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Wed Dec 28 17:36:36 2016 mallez louis
-** Last update Tue May  9 10:14:24 2017 
+** Last update Wed Sep 27 19:14:38 2017 
 */
 
 #ifndef W3D_H_
@@ -32,7 +32,7 @@
 
 #define ANGLE (5 * M_PI) / 9
 #define PRECISION 0.01
-#define SPEED 0.1
+#define SPEED 0.2
 #define ROTATE 0.05
 
 #define SIZE_READ 100
@@ -145,10 +145,8 @@ sfUint8			*create_pixel_buffer(int width, int height);
 int                     prepare_window(t_my_framebuffer *mfb, t_map *map);
 int			my_tab_maker(char *buff, t_map *map);
 int			main_read(char *name, t_map *map);
-t_raycaster		my_raycast(sfVector2f pos, float direction,
-				   t_bloc **map, sfVector2i mapSize);
 t_raycaster		my_raycast_wp(sfVector2f pos, float direction,
-				   t_map *map, t_all_player *plays);
+				      t_map *map);
 int			move_turn(t_player *play, float a);
 sfVector2f		mmove_forward(sfVector2f pos, float direction,
 				      float distance, t_map *map);
