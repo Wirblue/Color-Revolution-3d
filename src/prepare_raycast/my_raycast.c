@@ -5,22 +5,14 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Mon Jan  2 09:55:55 2017 mallez louis
-** Last update Wed Feb  1 16:19:16 2017 
+** Last update Wed Sep 27 17:32:41 2017 
 */
 
 #include "w3d.h"
 
 int			find_face(t_raycaster *ray)
 {
-  ray->face = 0;
-  if (FACE_X < 0 && FACE_Y >= 0)
-    ray->face = 1;
-  if (FACE_X >= 0 && FACE_Y > 0)
-    ray->face = 2;
-  if (FACE_X <= 0 && FACE_Y <= 0)
-    ray->face = 4;
-  if (FACE_X > 0 && FACE_Y < 0)
-    ray->face = 3;
+  ray->face = (FACE_X < 0) ? 1 : 2 + (FACE_Y < 0) ? 2 : 0;
   if (ray->face == 2 || ray->face == 4)
     ray->larg = (int)((ray->pos.x - (int)ray->pos.x) * 10);
   else if (ray->face == 1 || ray->face == 3)

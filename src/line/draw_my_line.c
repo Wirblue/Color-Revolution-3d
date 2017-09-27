@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Tue Jan  3 09:46:14 2017 mallez louis
-** Last update Sun Jan 15 20:45:11 2017 
+** Last update Tue Sep 26 19:23:38 2017 
 */
 
 #include "w3d.h"
@@ -25,11 +25,12 @@ int		draw_my_line(t_my_framebuffer *buff, t_raycaster *ray,
   size = buff->height * 2 / (ray->size * TAILLE_MUR);
   start = buff->height / 2 - size / 2;
   t = map->text.color[ray->wall.color];
-  t.a = 255;
   while (i <= size)
     {
       haut = (int)(i * 10 / size) * 11 + ray->larg;
       t.a = 25 * map->text.text_wall[ray->wall.type - 1][haut];
+      if (ray->face % 2 != 0)
+	t.a = 3 * t.a / 4;
       my_put_pixel(buff, line, start + i, t);
       i++;
     }
