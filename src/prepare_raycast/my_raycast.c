@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Mon Jan  2 09:55:55 2017 mallez louis
-** Last update Wed Sep 27 19:14:07 2017 
+** Last update Wed Sep 27 20:53:38 2017 
 */
 
 #include "w3d.h"
@@ -77,7 +77,13 @@ t_raycaster		my_raycast_wp(sfVector2f pos, float direction, t_map *map)
   ray.pos.y = pos.y;
   ray.size = my_raycast_x(pos, direction, map, &ray);
   ray.wall = map->map[(int)ray.pos.y][(int)ray.pos.x];
+  ray.inter.x = pos.x + ray.size * cosf(direction);
+  ray.inter.y = pos.y + ray.size * sinf(direction);
   if (ray.wall.type == 0)
     ray.wall.type = 1;
+  if (ray.face == 0)
+    ray.larg = (int)((ray.inter.y - (int)ray.inter.y) * 10);
+  else
+    ray.larg = (int)((ray.inter.x - (int)ray.inter.x) * 10);
   return (ray);
 }

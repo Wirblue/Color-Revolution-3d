@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Tue Jan  3 09:46:14 2017 mallez louis
-** Last update Wed Sep 27 19:13:16 2017 
+** Last update Wed Sep 27 20:41:46 2017 
 */
 
 #include "w3d.h"
@@ -27,7 +27,7 @@ int		draw_my_line(t_my_framebuffer *buff, t_raycaster *ray,
   t = map->text.color[ray->wall.color];
   while (i <= size)
     {
-      haut = (int)(i * 10 / size) * 11;
+      haut = (int)(i * 10 / size) * 11 + ray->larg;
       t.a = 25 * map->text.text_wall[ray->wall.type - 1][haut];
       if (ray->face == 0)
       	t.a = 3 * t.a / 4;

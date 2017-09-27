@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Wed Dec 28 17:36:36 2016 mallez louis
-** Last update Wed Sep 27 19:14:38 2017 
+** Last update Wed Sep 27 20:50:21 2017 
 */
 
 #ifndef W3D_H_
@@ -119,6 +119,7 @@ typedef struct		s_bloc
 typedef struct		s_raycaster
 {
   sfVector2f		pos;
+  sfVector2f		inter;
   float			size;
   t_bloc		wall;
   int			larg;
