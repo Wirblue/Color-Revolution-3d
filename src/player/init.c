@@ -5,7 +5,7 @@
 ** Login   <louis.mallez@epitech.net>
 **
 ** Started on  Tue Jan  3 13:50:44 2017 mallez louis
-** Last update Fri Feb  3 20:07:02 2017 
+** Last update Wed Sep 27 19:24:36 2017 
 */
 
 #include "w3d.h"
@@ -51,7 +51,7 @@ int		init_player(t_map *map, t_all_player *plays)
   p = 0;
   pos.y = 0;
   plays->nbr = count_player(map);
-  if (plays->nbr < 0 || plays->nbr > 9)
+  if (plays->nbr <= 0 || plays->nbr > 9)
     return (failed_we("CR3D:\tToo much or too few players\n", -1));
   if ((plays->play = malloc(plays->nbr * sizeof(t_player))) == NULL)
     return (failed_we("CR3D:\terror malloc\n", -1));
